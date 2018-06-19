@@ -20,7 +20,7 @@ setup(
 
   name = 'githubdl',
 
-  version = '0.1.0',
+  version = '0.1.2',
 
   description = 'A tool for downloading individual files/directories from Github or Github Enterprise. This circumvents the requirement to clone an entire repository.',
 
@@ -50,8 +50,7 @@ setup(
   keywords = ['github', 'github enterprise', 'download', 'file', 'path', 'git', 'version control', 'deployment'],
 
   install_requires = [
-      'requests',
-      'pathlib'
+      'requests'
   ],
 
   packages = find_packages(exclude=['contrib', 'docs', 'tests']),

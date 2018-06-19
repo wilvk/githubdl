@@ -11,6 +11,10 @@ This circumvents the requirement to clone a complete repository.
 
 # Installation:
 
+pip:
+
+`pip install githubdl`
+
 http:
 
 `pip install git+https://github.com/wilvk/githubdl.git`
@@ -29,9 +33,9 @@ cd githubdl
 pip install -e .
 ```
 
-# Usage
+# Usage:
 
-# Obtaining a Github token.
+## Obtaining a Github token:
 
 You will need a token from either Github Enterprise or Github as this package works with the Github v3 API.
 
@@ -46,7 +50,7 @@ To do this:
 
 # Usage (from the commandline):
 
-Firstly, get a Github token from the Github console and set it as the environment variable `GIT_TOKEN`.
+With your Github token from the Github console and set it as the environment variable `GIT_TOKEN`.
 
 ## Single file:
 
