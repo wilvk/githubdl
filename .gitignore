@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.pyc
+githubdl.egg-info/
+dist/
+githubdl/tests/support/
+githubdl/tests/README.md
+githubdl/__pycache__/
+build/

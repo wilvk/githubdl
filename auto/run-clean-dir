@@ -1,0 +1,7 @@
+#! /bin/sh -e
+
+cd $(dirname $0)/..
+
+rm -rf dist
+rm -rf githubdl.egg-info
+rm -rf build

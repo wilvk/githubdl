@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd /work
+
+rm -rf github.egg-info
+rm -rf dist
+
+python ./setup.py sdist
+python ./setup.py bdist_wheel

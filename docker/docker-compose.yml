@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+
+  dev-githubdl:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    working_dir: /work
+    environment:
+      - GIT_TOKEN
+    volumes:
+      - ..:/work
+

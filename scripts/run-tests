@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd /work
+
+pip install -e .
+
+cd /work/tests
+
+nosetests test_*.py
