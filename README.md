@@ -13,24 +13,28 @@ This circumvents the requirement to clone a complete repository.
 
 pip:
 
-`pip install githubdl`
+```bash
+$ pip install githubdl
+```
 
 http:
 
-`pip install git+https://github.com/wilvk/githubdl.git`
+```bash
+$ pip install git+https://github.com/wilvk/githubdl.git
+```
 
 ssh:
 
-`pip install git+ssh://git@github.com:wilvk/githubdl.git`
+```bash
+$ pip install git+ssh://git@github.com:wilvk/githubdl.git
+```
 
 from clone:
 
-```
-git clone git@github.com:wilvk/githubdl.git
-
-cd githubdl
-
-pip install -e .
+```bash
+$ git clone git@github.com:wilvk/githubdl.git
+$ cd githubdl
+$ pip install -e .
 ```
 
 # Usage:
@@ -55,7 +59,7 @@ There are also instructions on how to do this [here](https://help.github.com/art
 With your new Github token, export it as the environment variable `GIT_TOKEN`.
 
 ```bash
-# export GIT_TOKEN=1234567890123456789012345678901234567890123
+$ export GIT_TOKEN=1234567890123456789012345678901234567890123
 ```
 
 ## Single file:
@@ -63,7 +67,7 @@ With your new Github token, export it as the environment variable `GIT_TOKEN`.
 Then, for example, to download a file called `README.md` from the repository `http://github.com/wilvk/pbec`:
 
 ```bash
-# githubdl -u "http://github.com/wilvk/pbec" -f "README.md"
+$ githubdl -u "http://github.com/wilvk/pbec" -f "README.md"
 2018-05-12 07:19:16,934 - root         - INFO     - Requesting file: README.md at url: https://api.github.com/repos/wilvk/pbec/contents/README.md
 2018-05-12 07:19:18,165 - root         - INFO     - Writing to file: README.md
 ```
@@ -71,7 +75,7 @@ Then, for example, to download a file called `README.md` from the repository `ht
 ## Entire directory:
 
 ```bash
-# githubdl -u "http://github.com/wilvk/pbec" -d "support"
+$ githubdl -u "http://github.com/wilvk/pbec" -d "support"
 2018-05-12 07:19:41,667 - root         - INFO     - Retrieving a list of files for directory: support
 2018-05-12 07:19:41,668 - root         - INFO     - Requesting file: support at url: https://api.github.com/repos/wilvk/pbec/contents/support
 2018-05-12 07:19:42,978 - root         - INFO     - Requesting file: support/Screen Shot 2017-12-10 at 9.27.56 pm.png at url: https://api.github.com/repos/wilvk/pbec/contents/support/Screen Shot 2017-12-10 at 9.27.56 pm.png
@@ -83,7 +87,7 @@ Then, for example, to download a file called `README.md` from the repository `ht
 # Entire repository:
 
 ```bash
-# githubdl -u "http://github.com/wilvk/pbec" -d "/" -t "."
+$ githubdl -u "http://github.com/wilvk/pbec" -d "/" -t "."
 ```
 
 Note: if `-t` is not set, output will go to your `/` directory.
@@ -91,13 +95,13 @@ Note: if `-t` is not set, output will go to your `/` directory.
 # List all tags for a repository in JSON:
 
 ```bash
-# githubdl -u "http://github.com/wilvk/pbec" -a
+$ githubdl -u "http://github.com/wilvk/pbec" -a
 ```
 
 # List all branches for a repository in JSON:
 
 ```bash
-# githubdl -u "http://github.com/wilvk/pbec" -b
+$ githubdl -u "http://github.com/wilvk/pbec" -b
 ```
 
 ## Options:
@@ -105,16 +109,16 @@ Note: if `-t` is not set, output will go to your `/` directory.
 Current options are:
 
 ```bash
-# githubdl --help             or     -h
-           --file                    -f
-           --dir                     -d
-           --url (required)          -u
-           --target                  -t
-           --git_token               -g
-           --log_level               -l
-           --reference               -r
-           --tags                    -a
-           --branches                -b
+githubdl --help             or     -h
+         --file                    -f
+         --dir                     -d
+         --url (required)          -u
+         --target                  -t
+         --git_token               -g
+         --log_level               -l
+         --reference               -r
+         --tags                    -a
+         --branches                -b
 ```
 
 ## Logging:
@@ -134,7 +138,7 @@ References can be applied to file and directory download only and consist of val
 ## Loading the package (in a REPL):
 
 ```
-# python
+python
 Python 3.4.8 (default, Feb  7 2018, 02:31:08)
 [GCC 5.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -154,7 +158,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 In bash:
 
 ```bash
-# export GIT_TOKEN=1234567890123456789012345678901234567890123
+$ export GIT_TOKEN=1234567890123456789012345678901234567890123
 ```
 
 In Python:
@@ -182,7 +186,7 @@ In Python:
 In bash:
 
 ```bash
-# export GIT_TOKEN=1234567890123456789012345678901234567890123
+$ export GIT_TOKEN=1234567890123456789012345678901234567890123
 ```
 
 In Python:
@@ -204,7 +208,7 @@ In Python:
 Only `repo_url` and `file_name` are required.
 
 ```python3
-def dl_file(repo_url, file_name, target_filename='', github_token='', log_level='', reference=''):
+  def dl_file(repo_url, file_name, target_filename='', github_token='', log_level='', reference=''):
 ```
 
 ## Directory download options:
@@ -212,7 +216,7 @@ def dl_file(repo_url, file_name, target_filename='', github_token='', log_level=
 Only `repo_url` and `base_path` are required.
 
 ```python3
-def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', reference=''):
+  def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', reference=''):
 ```
 
 ## Tags download options:
@@ -220,7 +224,7 @@ def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', r
 Only `repo_url` is required.
 
 ```python3
-def dl_tags(repo_url, github_token='', log_level=''):
+  def dl_tags(repo_url, github_token='', log_level=''):
 ```
 
 ## Branches download options:
@@ -228,7 +232,7 @@ def dl_tags(repo_url, github_token='', log_level=''):
 Only `repo_url` is required.
 
 ```python3
-def dl_branches(repo_url, github_token='', log_level=''):
+  def dl_branches(repo_url, github_token='', log_level=''):
 ```
 
 ### A note on logging:
@@ -236,15 +240,15 @@ def dl_branches(repo_url, github_token='', log_level=''):
 Log level is passed in as `logging` variable. e.g.
 
 ```python3
-import logging
-import githubdl
-githubdl.dl_file("http://github.com/wilvk/pbec", "README.md", log_level=logging.DEBUG)
+>>> import logging
+>>> import githubdl
+>>> githubdl.dl_file("http://github.com/wilvk/pbec", "README.md", log_level=logging.DEBUG)
 ```
 
 # Tests:
 
 ```bash
-auto/run-tests
+$ auto/run-tests
 ```
 
 Note: You will have to have a Github token exported as `GIT_TOKEN` to run the tests.
