@@ -109,16 +109,16 @@ $ githubdl -u "http://github.com/wilvk/pbec" -b
 Current options are:
 
 ```bash
-githubdl --help             or     -h
-         --file                    -f
-         --dir                     -d
-         --url (required)          -u
-         --target                  -t
-         --git_token               -g
-         --log_level               -l
-         --reference               -r
-         --tags                    -a
-         --branches                -b
+$ githubdl --help             or     -h
+           --file                    -f
+           --dir                     -d
+           --url (required)          -u
+           --target                  -t
+           --git_token               -g
+           --log_level               -l
+           --reference               -r
+           --tags                    -a
+           --branches                -b
 ```
 
 ## Logging:
@@ -138,7 +138,7 @@ References can be applied to file and directory download only and consist of val
 ## Loading the package (in a REPL):
 
 ```
-python
+$ python
 Python 3.4.8 (default, Feb  7 2018, 02:31:08)
 [GCC 5.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
