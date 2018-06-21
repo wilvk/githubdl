@@ -27,7 +27,7 @@ setup(
   author = 'Willem van Ketwich',
   author_email = 'willvk@gmail.com',
 
-  licence = 'MIT',
+  license = 'MIT',
 
   python_requires='>=3.4',
 
