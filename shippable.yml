@@ -26,6 +26,7 @@ build:
   # http://docs.shippable.com/ci/shippableyml/#ci
   ci:
     - pip install pyyaml twine requests nose wheel
+    - pip install -e .
     - mkdir -p $TEST_RESULTS_DIR
     - pushd $TESTS_LOC_DIR
     - nosetests test_*.py
