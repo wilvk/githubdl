@@ -18,8 +18,8 @@ env:
   global:
     - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
     - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
-  secure:
-    - sHgvuGO1V/g+qyicdpG57acTSKpBQdNaX5dt7hFY70jMj1r16qnWxKaicbEGGKlPeMNYq0N1t5RmmvaIh0SISHxYSIQQWMQ/tVqsIlUG4Gg70sJTlyETqKuSLeQAShJ+OEnpMDaXplFmMZbsEEQVzDHJ7gL2MhyEjD+t/FlsVE5hrsivAnt0zTZy5qrk2DO8OIKPal+G3ztCRSCFouCfjPQIbY84I3te2h59MUBs3VwNswfZPxkVXLbt2OdvghPE0ti0S51qFfpgrVwpa2j6BrgKvv+ZrSPN1jPSZRdN8zxOzmoch+sKz4TizjN7LKmn32o4ohpVwKgP6K4mE7KxYA==
+env:
+  - secure: sHgvuGO1V/g+qyicdpG57acTSKpBQdNaX5dt7hFY70jMj1r16qnWxKaicbEGGKlPeMNYq0N1t5RmmvaIh0SISHxYSIQQWMQ/tVqsIlUG4Gg70sJTlyETqKuSLeQAShJ+OEnpMDaXplFmMZbsEEQVzDHJ7gL2MhyEjD+t/FlsVE5hrsivAnt0zTZy5qrk2DO8OIKPal+G3ztCRSCFouCfjPQIbY84I3te2h59MUBs3VwNswfZPxkVXLbt2OdvghPE0ti0S51qFfpgrVwpa2j6BrgKvv+ZrSPN1jPSZRdN8zxOzmoch+sKz4TizjN7LKmn32o4ohpVwKgP6K4mE7KxYA==
 
 build:
 
