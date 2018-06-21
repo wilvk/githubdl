@@ -1,3 +1,5 @@
+[![Downloads](http://pepy.tech/badge/githubdl)](http://pepy.tech/project/githubdl)
+
 # Github Path Downloader
 
 A tool for downloading individual files/directories from Github or Github Enterprise.
