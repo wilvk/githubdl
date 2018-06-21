@@ -1,4 +1,4 @@
-[![Downloads](http://pepy.tech/badge/githubdl)](http://pepy.tech/project/githubdl)
+[![Downloads](http://pepy.tech/badge/githubdl)](http://pepy.tech/project/githubdl) [![Run Status](https://api.shippable.com/projects/5b2b5de16104a90700924b85/badge?branch=master)](https://app.shippable.com/github/wilvk/githubdl)
 
 # Github Path Downloader
 
