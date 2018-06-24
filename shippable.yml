@@ -18,4 +18,6 @@ build:
     - pushd $SHIPPABLE_REPO_DIR/tests
     - nosetests test_*.py
     - popd
+    - python ./setup.py sdist
+    - python ./setup.py bdist_wheel
 
