@@ -1,5 +1,5 @@
-from . import url_helpers as uh
 import logging
+from . import url_helpers as uh
 
 def generate_repo_api_url(domain_name, repo_name, file_name, reference, api_path):
     if domain_name.lower() == "github.com":
@@ -26,7 +26,7 @@ def generate_ref_string(reference):
 
 def generate_request_string(file_name, reference):
     reference = generate_ref_string(reference)
-    if len(file_name) > 0 or len(reference) > 0:
+    if file_name != '' or reference != '':
         return '/' + file_name + reference
     return ''
 

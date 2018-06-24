@@ -17,10 +17,10 @@ def get_files_from_json(response_object):
     files = {}
     try:
         for item in response_object:
-            files.update({ item.get("name"): item.get("type") })
+            files.update({item.get("name"): item.get("type")})
         return files
-    except AttributeError as e:
-        logging.critical("Unable to retrieve list of files from response.\n Exception: " + str(e) + "\n Response: " + str(response_object))
+    except AttributeError as ex:
+        logging.critical("Unable to retrieve list of files from response.\n Exception: " + str(ex) + "\n Response: " + str(response_object))
         exit()
 
 def get_list_of_files_in_path(repo_url, base_path, github_token, reference):
@@ -33,13 +33,13 @@ def get_list_of_files_in_path(repo_url, base_path, github_token, reference):
 def process_request(http_url, github_token):
     try:
         request = requests.get(http_url,
-            headers= {
-                "Authorization": "token " + github_token,
-                "Accept": "application/vnd.github.v3.raw"
-            })
+                               headers={
+                                   "Authorization": "token " + github_token,
+                                   "Accept": "application/vnd.github.v3.raw"
+                               })
         return request.content
-    except requests.exceptions.RequestException as e:
-        logging.error("Error requesting file. RequestException: " + str(e))
+    except requests.exceptions.RequestException as ex:
+        logging.error("Error requesting file. RequestException: " + str(ex))
 
 def download_git_file_content(repo_url, file_name, github_token, reference):
     github_token = get_github_token(github_token)

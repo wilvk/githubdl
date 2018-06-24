@@ -1,3 +1,6 @@
+'''
+    api.py module - exposed methods for the githubdl library
+'''
 import os
 import logging
 import sys
@@ -26,9 +29,9 @@ def dl_info(repo_url, github_token, log_level, info_type):
     tags = rp.download_git_repo_info(repo_url, github_token, info_type)
     return tags.decode("utf-8")
 
-"""
+'''
 Exposed api methods below:
-"""
+'''
 def dl_file(repo_url, file_name, target_filename='', github_token='', log_level='', reference=''):
     set_logging(log_level)
     target_filename = set_default_if_empty(target_filename, file_name)
