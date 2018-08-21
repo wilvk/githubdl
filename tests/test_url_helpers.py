@@ -12,7 +12,7 @@ import url_helpers as uh
 
 class TestUrlHelpers:
 
-    def test_check_url_is_http_https(self):
+    def test_check_url_is_http_http(self):
         result = uh.check_url_is_http("http://test.com")
         assert result == True
 
@@ -20,11 +20,11 @@ class TestUrlHelpers:
         result = uh.check_url_is_http("https://test.com")
         assert result == True
 
-    def test_check_url_is_not_http(self):
+    def test_check_url_is_not_http_1(self):
         result = uh.check_url_is_http("httpxx://test.com")
         assert result == False
 
-    def test_check_url_is_not_http(self):
+    def test_check_url_is_not_http_2(self):
         result = uh.check_url_is_http("htp://test.com")
         assert result == False
 
