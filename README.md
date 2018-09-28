@@ -86,7 +86,7 @@ $ githubdl -u "http://github.com/wilvk/pbec" -d "support"
 ...
 ```
 
-# Entire repository:
+## Entire repository:
 
 ```bash
 $ githubdl -u "http://github.com/wilvk/pbec" -d "/" -t "."
