@@ -90,6 +90,36 @@ $ githubdl -u "http://github.com/wilvk/pbec" -d "support"
 
 ```bash
 $ githubdl -u "http://github.com/wilvk/pbec" -d "/" -t "."
+
+...
+```
+
+Note: if `-t` is not set, output will go to your `/` directory.
+
+## By commit hash:
+
+## Single file from a specific commit:
+
+```bash
+$ githubdl -u "http://github.com/wilvk/pbec" -f "README.md" -r "c29eb5a5d364870a55c0c22f203f8c4e2ce1c638"
+
+...
+```
+
+## Entire directory from a specific commit:
+
+```bash
+$ githubdl -u "http://github.com/wilvk/pbec" -d "support" -r "c29eb5a5d364870a55c0c22f203f8c4e2ce1c638"
+
+...
+
+```
+## Entire repository from a specific commit:
+
+```bash
+$ githubdl -u "http://github.com/wilvk/pbec" -d "/" -r "c29eb5a5d364870a55c0c22f203f8c4e2ce1c638" -t "."
+
+...
 ```
 
 Note: if `-t` is not set, output will go to your `/` directory.
