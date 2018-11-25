@@ -20,7 +20,7 @@ setup(
 
   name = 'githubdl',
 
-  version = '0.1.3',
+  version = '0.1.4',
 
   description = 'A tool for downloading individual files/directories from Github or Github Enterprise. This circumvents the requirement to clone an entire repository.',
 
@@ -31,7 +31,7 @@ setup(
 
   python_requires='>=3.4',
 
-  url = 'https://github.com/wilvk/githubdl',
+  url = 'http://githubdl.seso.io',
 
   download_url = 'https://github.com/wilvk/githubdl/archive/0.1.tar.gz',
 

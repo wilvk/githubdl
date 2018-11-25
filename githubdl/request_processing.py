@@ -32,6 +32,7 @@ def get_list_of_files_in_path(repo_url, base_path, github_token, reference):
 
 def process_request(http_url, github_token):
     try:
+        http_url = fix_url_path_on_windows(http_url)
         request = requests.get(http_url,
                                headers={
                                    "Authorization": "token " + github_token,
@@ -40,6 +41,11 @@ def process_request(http_url, github_token):
         return request.content
     except requests.exceptions.RequestException as ex:
         logging.error("Error requesting file. RequestException: " + str(ex))
+
+def fix_url_path_on_windows(http_url):
+    if os.name == 'nt':
+        return http_url.replace('\\', '/')
+    return http_url
 
 def download_git_file_content(repo_url, file_name, github_token, reference):
     github_token = get_github_token(github_token)
