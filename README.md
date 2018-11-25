@@ -60,8 +60,16 @@ There are also instructions on how to do this [here](https://help.github.com/art
 
 With your new Github token, export it as the environment variable `GIT_TOKEN`.
 
+## On Unix/Linux:
+
 ```bash
 $ export GIT_TOKEN=1234567890123456789012345678901234567890123
+```
+
+## On Windows:
+
+```cmd
+C:\> set GIT_TOKEN=1234567890123456789012345678901234567890123
 ```
 
 ## Single file:
