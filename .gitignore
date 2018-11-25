@@ -7,3 +7,4 @@ githubdl/tests/support/
 githubdl/tests/README.md
 githubdl/__pycache__/
 build/
+scripts/.pypirc

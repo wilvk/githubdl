@@ -2,4 +2,8 @@
 
 cd /work
 
-twine upload dist/*
+echo "note to self: set password in /scripts/.pypirc before running"
+
+cp scripts/.pypirc /root
+
+twine upload dist/* --verbose
