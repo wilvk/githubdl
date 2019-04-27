@@ -17,26 +17,17 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-
   name = 'githubdl',
-
-  version = '0.1.4',
-
+  version = '0.1.6',
   description = 'A tool for downloading individual files/directories from Github or Github Enterprise. This circumvents the requirement to clone an entire repository.',
-
   author = 'Willem van Ketwich',
   author_email = 'willvk@gmail.com',
-
   license = 'MIT',
-
   python_requires='>=3.4',
-
   url = 'http://githubdl.seso.io',
-
-  download_url = 'https://github.com/wilvk/githubdl/archive/0.1.tar.gz',
-
+  download_url = 'https://github.com/wilvk/githubdl/archive/0.1.5.tar.gz',
   long_description=long_description,
-
+  long_description_content_type='text/markdown',
   classifiers=[
       'Development Status :: 3 - Alpha',
       'Intended Audience :: Developers',
@@ -46,20 +37,15 @@ setup(
       'Programming Language :: Python :: 3.5',
       'Programming Language :: Python :: 3.6',
   ],
-
-  keywords = ['github', 'github enterprise', 'download', 'file', 'path', 'git', 'version control', 'deployment'],
-
+  keywords = ['github', 'github enterprise', 'download', 'file', 'path', 'git', 'version control', 'deployment', 'submodules', 'modules'],
   install_requires = [
       'requests'
   ],
-
   packages = find_packages(exclude=['contrib', 'docs', 'tests']),
-
   extras_require={
       'dev': [],
       'test': [ 'nose' ],
   },
-
   entry_points={
       'console_scripts': [
           'githubdl=githubdl:main',

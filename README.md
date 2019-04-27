@@ -132,6 +132,14 @@ $ githubdl -u "http://github.com/wilvk/pbec" -d "/" -r "c29eb5a5d364870a55c0c22f
 
 Note: if `-t` is not set, output will go to your `/` directory.
 
+## Entire repository from a specific commit, with submodules (as specified in .gitmodules):
+
+```bash
+$ githubdl -u "http://github.com/wilvk/pbec" -d "/" -r "c29eb5a5d364870a55c0c22f203f8c4e2ce1c638" -t "." -s
+
+...
+```
+
 # List all tags for a repository in JSON:
 
 ```bash
@@ -159,6 +167,7 @@ $ githubdl --help             or     -h
            --reference               -r
            --tags                    -a
            --branches                -b
+           --submodules              -s
 ```
 
 ## Logging:
@@ -213,6 +222,12 @@ In Python:
 >>> githubdl.dl_dir("https://github.com/wilvk/pbec", "support", "support_new")
 ```
 
+### Saving to a different path with submodules:
+
+```python3
+>>> githubdl.dl_dir("https://github.com/wilvk/pbec", "support", "support_new", submodules=True)
+```
+
 ## Downloading a file:
 
 ### Passing in a token:
@@ -256,7 +271,7 @@ Only `repo_url` and `file_name` are required.
 Only `repo_url` and `base_path` are required.
 
 ```python3
-  def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', reference=''):
+  def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', reference='', submodules=''):
 ```
 
 ## Tags download options:
