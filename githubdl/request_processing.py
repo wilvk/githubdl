@@ -10,8 +10,9 @@ def get_github_token(github_token):
             return os.environ["GIT_TOKEN"]
         return github_token
     except KeyError:
-        logging.critical("Unable to find Github token either as a parameter or the in environment variable 'GIT_TOKEN'")
-        exit()
+        err_message="Unable to find Github token either as a parameter or the in environment variable 'GIT_TOKEN'"
+        logging.critical(err_message)
+        raise RuntimeError(err_message)
 
 def get_files_from_json(response_object):
     files = {}
@@ -20,8 +21,9 @@ def get_files_from_json(response_object):
             files.update({item.get("name"): item.get("type")})
         return files
     except AttributeError as ex:
-        logging.critical("Unable to retrieve list of files from response.\n Exception: " + str(ex) + "\n Response: " + str(response_object))
-        exit()
+        err_message = "Unable to retrieve list of files from response.\n Exception: " + str(ex) + "\n Response: " + str(response_object)
+        logging.critical(err_message)
+        raise RuntimeError(err_message)
 
 def get_list_of_files_in_path(repo_url, base_path, github_token, reference):
     github_token = get_github_token(github_token)

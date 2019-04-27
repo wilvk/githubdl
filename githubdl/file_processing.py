@@ -17,5 +17,7 @@ def write_file(file_name, file_data):
         write_file.write(file_data)
 
 def create_directory(dir_name):
+    logging.info("Checking for directory: " + dir_name)
     if not os.path.exists(dir_name):
+        logging.info("Creating directory: " + dir_name)
         os.makedirs(dir_name)

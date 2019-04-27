@@ -4,6 +4,7 @@
 import os
 import logging
 import sys
+import re
 from . import request_processing as rp
 from . import file_processing as fp
 from . import url_processing as up
@@ -38,7 +39,7 @@ def dl_file(repo_url, file_name, target_filename='', github_token='', log_level=
     file_data = rp.download_git_file_content(repo_url, file_name, github_token, reference)
     fp.write_file(target_filename, file_data)
 
-def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', reference=''):
+def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', reference='', submodules=''):
     set_logging(log_level)
     target_path = set_default_if_empty(target_path, base_path)
     files = rp.get_list_of_files_in_path(repo_url, base_path, github_token, reference)
@@ -49,6 +50,29 @@ def dl_dir(repo_url, base_path, target_path='', github_token='', log_level='', r
         else:
             download_filename = os.path.join(base_path, file_item)
             save_file_to_path(repo_url, download_filename, target_path, github_token, reference)
+            if file_item.lower().endswith('.gitmodules') and submodules:
+                full_filename = fp.get_target_full_filename(download_filename, target_path)
+                process_gitmodule(github_token, base_path, file_item, target_path, full_filename)
+
+def process_gitmodule(github_token, base_path, file_item, target_path, full_filename):
+    with open(full_filename) as f:
+        content = f.readlines()
+    content = [x.strip() for x in content]
+    path = None
+    url = None
+    path_pred = re.compile(r'^\s*path\s*=\s*(.*)$')
+    url_pred = re.compile(r'^\s*url\s*=\s*(.*)$')
+    for line in content:
+        if not path:
+            path = path_pred.search(line)
+        if not url:
+            url = url_pred.search(line)
+        if path and url:
+            tmp_path = os.path.join(target_path, path.group(1))
+            tmp_url = url.group(1)
+            path = url = None
+            fp.create_directory(tmp_path)
+            dl_dir(repo_url=tmp_url, base_path="/", target_path=tmp_path, github_token=github_token, submodules=True)
 
 def dl_tags(repo_url, github_token='', log_level=''):
     return dl_info(repo_url, github_token, log_level, 'tags')

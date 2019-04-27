@@ -35,8 +35,9 @@ def get_domain_name_from_ssh_url(repo_url):
 
 def validate_protocol_exists(is_ssh, is_http):
     if not is_ssh and not is_http:
-        logging.critical("Error: repository url provided is not http(s) or ssh")
-        exit()
+        err_message = "Error: repository url provided is not http(s) or ssh"
+        logging.critical(err_message)
+        raise RuntimeError(err_message)
 
 def check_url_protocol(repo_url):
     is_ssh = check_url_is_ssh(repo_url)

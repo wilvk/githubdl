@@ -66,6 +66,7 @@ def main():
     parser.add_argument('-l', '--log_level',
                         help='The level of logging to use for output. Valid options are: DEBUG, INFO, WARN, ERROR, CRITICAL. Defaults to INFO.', required=False)
     parser.add_argument('-r', '--reference', help='The name of the commit/branch/tag. Default: the repository’s default branch.', required=False)
+    parser.add_argument('-s', '--submodules', help='A switch specifying that all submodules are to be downloaded.', required=False, action='store_true')
 
     args = vars(parser.parse_args())
 
@@ -95,4 +96,4 @@ def main():
     if args['file'] != None:
         dl_file(repo_url=args['url'], file_name=args['file'], target_filename=target, github_token=git_token, log_level=log_level, reference=reference)
     elif args['dir'] != None:
-        dl_dir(repo_url=args['url'], base_path=args['dir'], target_path=target, github_token=git_token, log_level=log_level, reference=reference)
+        dl_dir(repo_url=args['url'], base_path=args['dir'], target_path=target, github_token=git_token, log_level=log_level, reference=reference, submodules=args['submodules'])
